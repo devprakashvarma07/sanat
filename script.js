@@ -47,15 +47,17 @@
   var zoom = function(){
     ticking = false;
     if (!stage || !frame || reduce || !mqM.matches) { if (frame) { frame.style.transform = ''; frame.style.borderRadius = ''; } return; }
-    var r = stage.getBoundingClientRect();
     var vh = window.innerHeight;
-    var total = stage.offsetHeight - vh;
-    var p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 1;
-    var e = p < .5 ? 2*p*p : 1 - Math.pow(-2*p+2, 2)/2;
-    var full = Math.min(window.innerWidth / frame.offsetWidth, window.innerHeight / frame.offsetHeight, 1.12);
-    var s = 0.82 + (full - 0.82) * e;
+    var room = stage.offsetHeight - vh;
+    var top = stage.getBoundingClientRect().top;
+    var p = room > 0 ? Math.min(1, Math.max(0, -top / room)) : (top < vh ? 1 : 0);
+    var e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+    var w = frame.offsetWidth || 1;
+    var end = Math.min(1.6, (window.innerWidth - 8) / w);
+    if (end < 1) end = 1;
+    var s = 0.9 + (end - 0.9) * e;
     frame.style.transform = 'scale(' + s.toFixed(4) + ')';
-    frame.style.borderRadius = Math.round(32 * (1 - e)) + 'px';
+    frame.style.borderRadius = Math.round(28 * (1 - e)) + 'px';
   };
   var onZoomScroll = function(){ if (!ticking) { ticking = true; requestAnimationFrame(fx); } };
   var band = document.querySelector('.band');

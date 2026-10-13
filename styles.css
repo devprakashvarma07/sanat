@@ -22,7 +22,7 @@ nav{display:flex;align-items:center;gap:28px;height:64px}
 .links a:hover{color:var(--text)}
 .links a.active{color:var(--text);font-weight:600}
 .nav-right{display:flex;align-items:center;gap:12px}
-.menu-btn{display:none;min-width:44px;height:38px;padding:0 14px;border:none;border-radius:999px;background:var(--action);color:#ffffeb;cursor:pointer;font-size:15px}
+.menu-btn{display:none;min-width:0;padding:0 8px;border:none;background:transparent;color:var(--text);cursor:pointer;font-size:20px;line-height:1}
 .mobile-menu{display:none;padding:4px 20px 16px;background:transparent}
 .mobile-menu a{display:block;padding:12px 4px;font-size:15px;font-weight:500;border-bottom:1px solid var(--line)}
 .mobile-menu a:last-child{border-bottom:none}
@@ -38,10 +38,10 @@ nav{display:flex;align-items:center;gap:28px;height:64px}
 .icards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
 .icard h4{font-size:16px;font-weight:600;margin:14px 0 6px}
 .icard p{font-size:13.5px;color:var(--text-soft);line-height:1.6}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;min-height:calc(100vh - 240px)}
-.hero-copy{text-align:left;min-width:0;align-self:center}
-.hero-copy h2.typed-line{margin:24px 0 0;text-align:left}
-.hero-copy .hero-cta{justify-content:flex-start}
+.hero-grid{display:block;min-height:0}
+.hero-copy{text-align:center;min-width:0}
+.hero-copy h2.typed-line{margin:24px auto 0;text-align:center}
+.hero-copy .hero-cta{justify-content:center}
 .zoom-stage{height:auto;position:relative;display:flex;justify-content:center;align-items:center;min-width:0}
 .zoom-sticky{overflow:clip}
 .zoom-frame{margin-top:0;will-change:transform}
@@ -58,7 +58,10 @@ nav{display:flex;align-items:center;gap:28px;height:64px}
 .icon-track .bub b{font-size:14px;font-weight:700;letter-spacing:.02em;color:var(--text)}
 .strip-cap{text-align:center;color:var(--text-soft);font-size:13px;margin-top:6px}
 @keyframes marquee{to{transform:translateX(-50%)}}
-.icon-track{animation-duration:34s}
+.icon-track{animation-duration:40s}
+.icon-strip:hover .icon-track{animation-play-state:paused}
+.faq details::details-content{block-size:0;overflow:clip;transition:block-size .35s var(--ease),content-visibility .35s allow-discrete}
+.faq details[open]::details-content{block-size:auto}
 .typed-line{font-size:clamp(26px,3.6vw,44px);font-weight:400;letter-spacing:-.04em;line-height:1.15;text-align:center;max-width:22ch;margin:0 auto;min-height:4.8em}
 .caret{display:inline-block;color:var(--soul);animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
@@ -76,7 +79,7 @@ nav{display:flex;align-items:center;gap:28px;height:64px}
 .post h4{font-size:17px;font-weight:600;margin:10px 0 6px}
 .post p{font-size:13.5px;color:var(--text-soft);line-height:1.6}
 .faq details{transition:background .25s}
-@media(prefers-reduced-motion:reduce){.shine{animation:none;color:inherit}.hero-h1 .w{opacity:1;transform:none;filter:none;animation:none}}
+@media(prefers-reduced-motion:reduce){.shine{animation:none;color:inherit}.hero-h1 .w{opacity:1;transform:none;filter:none;animation:none}.icon-track{animation:none}}
 .hero{text-align:center;padding:64px 0;position:relative;overflow:clip}
 .hero:before{content:"";position:absolute;top:6%;right:2%;width:min(480px,40vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(0,122,255,.08),rgba(0,122,255,0) 68%);filter:blur(12px);pointer-events:none}
 h1{font-size:clamp(52px,6.2vw,96px);font-weight:400;line-height:.88;letter-spacing:-.06em;margin-top:18px}
@@ -133,9 +136,9 @@ nav{height:58px;gap:12px}
 .hero-copy{text-align:center}
 .hero-copy h2.typed-line{margin:24px auto 0;text-align:center}
 .hero-copy .hero-cta{justify-content:center}
-.zoom-stage{height:130vh}
+.zoom-stage{height:118vh;margin:0 -24px}
 .zoom-sticky{position:sticky;top:0;min-height:100vh;display:grid;place-items:center;padding:24px 0}
-.phone-frame{height:auto;max-width:min(320px,82vw);margin:0 auto}
+.phone-frame{height:auto;max-width:min(340px,88vw);margin:0 auto}
 section{padding:54px 0}
 .feat{grid-template-columns:1fr;gap:22px;margin-top:36px}
 .feat:nth-child(even) .feat-copy{order:0}

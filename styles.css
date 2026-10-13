@@ -131,7 +131,7 @@ nav{height:58px;gap:12px}
 .hero{padding:44px 0}
 .hero-grid{grid-template-columns:1fr;min-height:0;gap:0}
 .hero-copy{text-align:center}
-.hero-copy .typed-line{margin:24px auto 0}
+.hero-copy h2.typed-line{margin:24px auto 0;text-align:center}
 .hero-copy .hero-cta{justify-content:center}
 .zoom-stage{height:130vh}
 .zoom-sticky{position:sticky;top:0;min-height:100vh;display:grid;place-items:center;padding:24px 0}

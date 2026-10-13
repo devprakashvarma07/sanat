@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sanatai.vercel.app/sitemap.xml
